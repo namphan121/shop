@@ -1,0 +1,29 @@
+.containner {
+  margin: 0 30%;
+  width: auto;
+  height: auto;
+  border: none;
+  box-shadow: 0px 5px 10px;
+  border-radius: 5px;
+}
+
+.form-group {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.form-control {
+  padding: 5px;
+  margin-top: 4px;
+  width: 500px;
+}
+
+.btn-update {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(138, 124, 233);
+  color: #FFFFFF;
+  padding: 10px;
+}

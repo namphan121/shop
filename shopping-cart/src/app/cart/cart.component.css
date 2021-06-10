@@ -1,0 +1,41 @@
+.containner {
+  margin: auto 10px 30px 10px;
+}
+
+td {
+  padding: 60px;
+}
+
+.btn-update {
+  margin-left: 30px;
+}
+
+.btn-group {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(138, 124, 233);
+  color: #ffffff;
+  padding: 10px;
+}
+
+.btn-group:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+table {
+  margin-top: 30px;
+}
+.btn-back {
+  padding: 15px 10px;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(138, 124, 233);
+}
+
+.btn-back:hover {
+  opacity: 0.7;
+}

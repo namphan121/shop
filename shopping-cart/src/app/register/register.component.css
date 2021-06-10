@@ -1,0 +1,33 @@
+.card {
+  background-image: url(/assets/img/login.png);
+  margin: 0 30%;
+  width: auto;
+  height: auto;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.form-group {
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;;
+}
+
+.frm-control {
+  padding: 7px;
+  border-radius: 3px;
+}
+
+.btn-Register {
+  padding: 9px;
+  border: none;
+  background-color: #89AEB2;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn-Register:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}

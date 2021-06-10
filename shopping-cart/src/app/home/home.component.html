@@ -1,0 +1,12 @@
+<app-navigation></app-navigation>
+
+<div class="containner">
+  <div class="box-item" *ngFor="let items of item">
+    <div class="item">
+      <h5>{{ items.name }}</h5>
+      <img class="img-product" [src]="items.image" />
+      <p>{{ items.description }}</p>
+      <button class="btn-add">Add to Cart</button>
+    </div>
+  </div>
+</div>

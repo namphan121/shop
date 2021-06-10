@@ -1,0 +1,11 @@
+.head-title {
+  margin-bottom: 30px;
+  color: white;
+  background-color: rgb(25, 122, 160);
+  font-family: "Mansalva", cursive;
+}
+
+.txt-header {
+  text-align: center;
+  font-size: 40px;
+}

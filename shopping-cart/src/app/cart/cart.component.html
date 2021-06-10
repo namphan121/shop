@@ -1,0 +1,50 @@
+<app-navigation></app-navigation>
+
+<div class="containner">
+  <a [routerLink] = "'../home'" class="btn-back">Continue Shopping</a><br>
+  <table id="cart" class="table table-hover table-condensed table-borderless">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tr *ngFor="let cart of item">
+      <td>
+        {{ cart.name }}
+      </td>
+      <td>{{ cart.price | currency: "USD" }}</td>
+      <td>
+        <div class="row">
+          <div class="col-6">
+            <input type="number" value="{{ cart.quantity }}" #quant />
+            <input type="hidden" value="{{ cart.id }}" #prod />
+            <button class="btn-update btn-group">Update</button>
+          </div>
+          <div class="col-6"></div>
+        </div>
+      </td>
+      <td>
+        {{ cart.quantity * cart.price | currency: "USD" }}
+      </td>
+      <td>
+        <button class="btn-group">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+  <div class="row">
+    <div class="col-9">Total Sum : {{ totalSum | currency: "USD" }}</div>
+    <div class="offset-1 col-2">
+      <button
+        type="button"
+        class="btn-group"
+      >
+        Checkout <i class="fa fa-angle-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
