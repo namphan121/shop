@@ -27,3 +27,8 @@
   color: #FFFFFF;
   padding: 10px;
 }
+
+.btn-update:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}

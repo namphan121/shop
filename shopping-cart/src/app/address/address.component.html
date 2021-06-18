@@ -1,43 +1,75 @@
 <app-navigation></app-navigation>
 
 <div class="containner">
-  <div class="form-group">
-    <label>Address:</label>
-    <div class="input-txt">
-      <input type="text" class="form-control" placeholder="Address" />
+  <form [formGroup]="formAddress" (ngSubmit)="createAddress()">
+    <div class="form-group">
+      <label>Address:</label>
+      <div class="input-txt">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="address"
+          placeholder="Address"
+        />
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label>City:</label>
-    <div class="input-txt">
-      <input type="text" class="form-control" placeholder="City" />
+    <div class="form-group">
+      <label>City:</label>
+      <div class="input-txt">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="city"
+          placeholder="City"
+        />
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label>State:</label>
-    <div class="input-txt">
-      <input type="text" class="form-control" placeholder="State" />
+    <div class="form-group">
+      <label>State:</label>
+      <div class="input-txt">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="state"
+          placeholder="State"
+        />
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label>Country:</label>
-    <div class="input-txt">
-      <input type="text" class="form-control" placeholder="Country" />
+    <div class="form-group">
+      <label>Country:</label>
+      <div class="input-txt">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="country"
+          placeholder="Country"
+        />
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label>Zipcode:</label>
-    <div class="input-txt">
-      <input type="text" class="form-control" placeholder="Zipcode" />
+    <div class="form-group">
+      <label>Zipcode:</label>
+      <div class="input-txt">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="zipcode"
+          placeholder="Zipcode"
+        />
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label>Phone Number:</label>
-    <div class="input-txt">
-      <input type="text" class="form-control" placeholder="Phone number" />
+    <div class="form-group">
+      <label>Phone Number:</label>
+      <div class="input-txt">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="phoneNumber"
+          placeholder="Phone number"
+        />
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <button class="btn-update">Update</button>
-  </div>
+    <div class="form-group">
+      <button class="btn-update">Update</button>
+    </div>
+  </form>
 </div>

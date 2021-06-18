@@ -1,0 +1,76 @@
+<app-navigation></app-navigation>
+
+<div class="containner">
+  <div class="edit-box">
+    <form [formGroup]="formProduct" (ngSubmit)="editProd()">
+      <div class="edit-box-item">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            placeholder="Product Name"
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            type="text"
+            class="form-control"
+            placeholder="description"
+            style="width: 602px; height: 80px"
+            formControlName="description"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="quantity"
+            placeholder="Quantity"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="price"
+            placeholder="Price"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="file"
+            class="form-control"
+            placeholder="Product Picture"
+            #image
+            accept="image/*"
+            (change)="selectFile($event)"
+          />
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <button class="btn-group btn-edit-prod">Update Product</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="img-preview">
+      <div id="preview-img">
+        <h4>Origin preview</h4>
+        <img
+          [src]="prod.imageDate"
+          style="width: 250px; height: 300px"
+          class="pre-img"
+        />
+      </div>
+      <div id="preview-img">
+        <h4>Image preview</h4>
+        <img
+          [src]="imageUrl"
+          style="width: 250px; height: 300px"
+          class="pre-img"
+        />
+      </div>
+    </div>
+  </div>
+</div>

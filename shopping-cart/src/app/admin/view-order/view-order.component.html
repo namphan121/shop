@@ -1,0 +1,36 @@
+<app-navigation></app-navigation>
+
+<div class="containner">
+  <div class="view-order" *ngFor="let order of orders" >
+    <div class="view-order-detail">
+      <div class="order-status">
+        <div class="status">
+          <label><strong>Order By: </strong> {{ order.orderBy }}</label
+          ><br />
+          <label><strong>Status: </strong>{{ order.approved | status}}</label
+          ><br />
+        </div>
+        <div class="btn">
+          <button class="btn-group" (click) = "updateStatusApprove(order)">Approve</button>
+          <button class="btn-group" (click) = "updateStatusDeclined(order)">Decline</button>
+        </div>
+      </div>
+      <div class="order-cart">
+        <h3>Order Details</h3>
+        <div class="order-detail">
+          <div
+            class="box-detail"
+            *ngFor="let orderDetail of order.orderDetails"
+          >
+            <label>{{ orderDetail.productName }}</label
+            ><br />
+            <label>Price:{{ orderDetail.productPrice }}</label
+            ><br />
+            <label>Quantity:{{ orderDetail.quantity }}</label
+            ><br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

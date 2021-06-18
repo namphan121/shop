@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable,Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -36,6 +36,9 @@ export class LoginServiceService {
         map((user: userModel) => {
           localStorage.setItem('user', JSON.stringify(user));
           localStorage.setItem('token', user.token);
+          localStorage.setItem('email', JSON.stringify(user.email));
+          localStorage.setItem('roles', JSON.stringify(user.roles));
+          localStorage.setItem('user_id', JSON.stringify(user.id));
           this.userSubject.next(user);
           return user;
         })
@@ -51,4 +54,12 @@ export class LoginServiceService {
   register(user: userModel) {
     return this.http.post(`${this.api}signup`, user);
   }
+
+  // getAuthType(){
+  //   if (this.store.get("roles") !== null) {
+  //     return this.store.get("roles");
+  //   }
+  //   return null;
+  // }
 }
+

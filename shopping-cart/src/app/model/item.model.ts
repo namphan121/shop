@@ -1,17 +1,19 @@
-export class item {
+export class itemModel {
   id: number;
   name: string;
-  image: string;
   description: string;
-  price: number;
-  quantity: number;
+  price: any;
+  quantity: any;
+  imageUrl: any;
+  userId: number;
+  imageDate: any;
 
   constructor() {
     this.id = 0;
-    this.name = ""
-    this.image = "";
-    this.description = "";
+    this.name = '';
+    this.description = '';
     this.price = 0;
     this.quantity = 0;
+    this.userId = 0;
   }
 }

@@ -1,0 +1,79 @@
+.containner {
+  margin: auto 10px 30px 10px;
+}
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid rgb(206, 191, 191);
+}
+
+.btn-add {
+  background-color: dimgray;
+}
+.item {
+  box-shadow: 0px 5px 10px;
+  width: 240px;
+  padding-left: 10px;
+  margin-top: 20px;
+  margin-right: 81px;
+}
+
+.item h5 {
+  font-size: 18px;
+}
+.img-product {
+  width: 200px;
+  height: 150px;
+}
+.btn-group {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.btn-group:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.btn-edit {
+  background-color: dimgray;
+  margin-left: 40px;
+}
+
+.btn-remove {
+  margin-left: 50px;
+  background-color: rgb(240, 40, 40);
+}
+
+.add-box {
+  display: flex;
+  border-top: 1px solid rgb(206, 191, 191);
+}
+
+.form-group {
+  padding: 15px;
+}
+
+.form-control {
+  padding: 10px;
+  width: 600px;
+}
+
+.img-preview {
+  width: 100%;
+}
+
+.img-preview h4{
+  text-align: center;
+}
+
+.pre-img {
+  margin-left: 145px;
+}
+
+.btn-add-prod {
+  background-color: magenta;
+}

@@ -1,0 +1,88 @@
+<app-navigation></app-navigation>
+<div class="containner">
+  <div>
+    <button class="btn-group btn-add" (click)="show()" *ngIf="!showAdd">
+      Click to add
+    </button>
+    <button class="btn-group btn-add" (click)="hide()" *ngIf="showAdd">
+      Click to hide
+    </button>
+  </div>
+  <div class="box" *ngIf="!showAdd">
+    <div class="box-item" *ngFor="let item of items">
+      <div class="item">
+        <h5>{{ item.name }}</h5>
+        <img class="img-product" [src]="item.imageDate" />
+        <p>{{ item.description }}</p>
+        <button class="btn-group btn-edit" (click)="editProduct(item.id)">
+          Edit
+        </button>
+        <button class="btn-group btn-remove" (click)="deleteProd(item.id)">
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="add-box" *ngIf="showAdd">
+    <form [formGroup]="formProduct" (ngSubmit)="addProd()">
+      <div class="add-box-item">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            placeholder="Product Name"
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            type="text"
+            class="form-control"
+            placeholder="description"
+            style="width: 602px; height: 80px"
+            formControlName="description"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="quantity"
+            placeholder="Quantity"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="price"
+            placeholder="Price"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="file"
+            class="form-control"
+            placeholder="Product Picture"
+            #image
+            accept="image/*"
+            (change)="selectFile($event)"
+          />
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <button class="btn-group btn-add-prod">Add Product</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="img-preview">
+      <h4>Image preview</h4>
+      <img
+        [src]="imageUrl"
+        style="width: 400px; height: 300px"
+        class="pre-img"
+      />
+    </div>
+  </div>
+</div>

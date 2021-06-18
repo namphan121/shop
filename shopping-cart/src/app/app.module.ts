@@ -13,6 +13,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginServiceService } from './services/login-service.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './auth/token.interceptor';
+import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
+import { EditProdComponent } from './admin/edit-prod/edit-prod.component';
+import { ViewOrderComponent } from './admin/view-order/view-order.component';
+import { StatusPipe } from './pipes/status.pipe';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +28,10 @@ import { TokenInterceptor } from './auth/token.interceptor';
     HomeComponent,
     AddressComponent,
     CartComponent,
+    HomeAdminComponent,
+    EditProdComponent,
+    ViewOrderComponent,
+    StatusPipe,
   ],
   imports: [
     BrowserModule,

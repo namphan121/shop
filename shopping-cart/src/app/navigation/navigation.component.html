@@ -1,24 +1,45 @@
 <div class="containner">
-  <ul class="nav">
-    <li>
-      <a class="nav-link" [routerLink] = "'../register'">Register</a>
-    </li>
-    <li>
-      <a class="nav-link" [routerLink] = "'../login'">Login</a>
-    </li>
-  </ul>
-  <ul class="nav">
-    <li>
-      <a class="nav-link" [routerLink] = "'../home'">Home</a>
-    </li>
-    <li>
-      <a class="nav-link" [routerLink] = "'../address'">Address</a>
-    </li>
-    <li>
-      <a class="nav-link" [routerLink] = "'../cart'">Cart</a>
-    </li>
-    <li>
-      <a class="nav-link" [routerLink] = "'../'">Logout</a>
-    </li>
-  </ul>
+  <div *ngIf="loggedType.toLowerCase().includes('admin'); else customer">
+    <ul class="nav nav-group">
+      <li>
+        <a class="nav-link" [routerLink]="'../homeAdmin'">Home</a>
+      </li>
+      <li>
+        <a class="nav-link" [routerLink]="'../order'">Orders</a>
+      </li>
+      <li>
+        <a class="nav-link" (click) = "logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+  <ng-template #customer>
+    <div *ngIf="loggedType.toLowerCase().includes('customer'); else anoymous">
+      <ul class="nav">
+        <li>
+          <a class="nav-link" [routerLink]="'../home'">Home</a>
+        </li>
+        <li>
+          <a class="nav-link" [routerLink]="'../address'">Address</a>
+        </li>
+        <li>
+          <a class="nav-link" [routerLink]="'../cart'">Cart</a>
+        </li>
+        <li>
+          <a class="nav-link" (click) = "logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <ng-template #anoymous>
+      <div>
+        <ul class="nav">
+          <li>
+            <a class="nav-link" [routerLink]="'../register'">Register</a>
+          </li>
+          <li>
+            <a class="nav-link" [routerLink]="'../login'">Login</a>
+          </li>
+        </ul>
+      </div>
+    </ng-template>
+  </ng-template>
 </div>

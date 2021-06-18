@@ -1,7 +1,7 @@
 <app-navigation></app-navigation>
 
 <div class="containner">
-  <a [routerLink] = "'../home'" class="btn-back">Continue Shopping</a><br>
+    <a [routerLink]="'../home'" class="btn-back">Continue Shopping</a><br />
   <table id="cart" class="table table-hover table-condensed table-borderless">
     <thead>
       <tr>
@@ -12,37 +12,35 @@
         <th></th>
       </tr>
     </thead>
-    <tr *ngFor="let cart of item">
+    <tr *ngFor="let cart of orderCartDetail, index as i">
       <td>
-        {{ cart.name }}
+        {{ cart.productName }}
       </td>
-      <td>{{ cart.price | currency: "USD" }}</td>
+      <td>{{ cart.productPrice | currency: "USD" }}</td>
       <td>
         <div class="row">
           <div class="col-6">
-            <input type="number" value="{{ cart.quantity }}" #quant />
-            <input type="hidden" value="{{ cart.id }}" #prod />
-            <button class="btn-update btn-group">Update</button>
+            <input type="text" value="{{ cart.quantity }}" #quant/>
+            <button class="btn-update btn-group" (click)="updateCart(i, quant)">
+              Update
+            </button>
           </div>
           <div class="col-6"></div>
         </div>
       </td>
       <td>
-        {{ cart.quantity * cart.price | currency: "USD" }}
+        {{ cart.quantity * cart.productPrice | currency: "USD" }}
       </td>
       <td>
-        <button class="btn-group">Delete</button>
+        <button class="btn-group" (click)="deleteCart(cart)">Delete</button>
       </td>
     </tr>
   </table>
 
   <div class="row">
-    <div class="col-9">Total Sum : {{ totalSum | currency: "USD" }}</div>
+    <div class="col-9">Total Sum : {{ getTotal() | currency: "USD" }}</div>
     <div class="offset-1 col-2">
-      <button
-        type="button"
-        class="btn-group"
-      >
+      <button type="button" class="btn-group" (click) = "placeOrder()">
         Checkout <i class="fa fa-angle-right"></i>
       </button>
     </div>
